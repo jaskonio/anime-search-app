@@ -1,0 +1,1 @@
+export { getAnimeByTitle } from './getAnimeByTitle';

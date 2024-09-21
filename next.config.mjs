@@ -7,6 +7,11 @@ const nextConfig = {
             hostname: 'www3.animeflv.net',
             port: '',
           },
+          {
+            protocol: 'https',
+            hostname: 'animeflv.net',
+            port: '',
+          },
         ],
       },
 };
