@@ -1,7 +1,7 @@
 import AnimeHeader from "./components/ui/header"
 import AnimeFooter from "./components/ui/footer"
 import AnimePanel from "./components/ui/panel"
-import AnimeTopSeries from "./components/ui/topseries"
+import AnimeTopSeries from "./components/ui/newSeries"
 
 export default function Component() {
   return (
