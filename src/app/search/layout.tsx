@@ -19,11 +19,11 @@ export default function RootLayout({
           </div>
           
         </section>
-        <section className="w-full py-12 md:py-14 lg:py-12 bg-white dark:bg-gray-900">
-          <div className="px-4 md:px-6">
+
+        <section className="w-full py-12 md:py-14 lg:py-12 dark:bg-gray-900">
+          <div className="px-4 md:px-6 text-center">
             {children}
           </div>
-          
         </section>
       </main>
     

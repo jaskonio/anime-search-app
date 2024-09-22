@@ -31,7 +31,7 @@ export async function fetchNewSeries() {
     return []
 }
 
-export async function searchQuery(query: string) {
+export async function searchByTitle(query: string) {
     try {
         const result: AnimeSearchResult[] = await getAnimeByTitle(query)
 

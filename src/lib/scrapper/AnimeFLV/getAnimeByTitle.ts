@@ -1,3 +1,5 @@
+"use server";
+
 import { config }  from "./config";
 import { AnimeSearchResult } from "./definition";
 import { ValidationError } from "./errors";

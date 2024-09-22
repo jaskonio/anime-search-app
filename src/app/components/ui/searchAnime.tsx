@@ -3,32 +3,41 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search } from "lucide-react"
-import { useRouter } from "next/navigation"
-import { FormEvent } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
+import { FormEvent, useState } from "react"
 
 
 export default function SearchAnime() {
-  const { replace } = useRouter()
+  const search = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState<string | null>(search ? search.get("query") : "")
+  const router = useRouter();
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    console.log(event)
     event.preventDefault()
-    const formData = new FormData(event.currentTarget)
+  
+    if (typeof searchQuery !== "string") {
+      return;
+    }
 
-    replace("/search?query=" + formData.get('query'))
+    const encodedSearchQuery = encodeURI(searchQuery);
+    router.push(`/search?query=${encodedSearchQuery}`);
   }
 
     return (
     <form className="flex space-x-2" onSubmit={onSubmit}>
-        <Input
-            className="max-w-lg flex-1 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm"
-            placeholder="Buscar anime..."
-            type="search" 
-            name="query"/>
-        <Button type="submit" className="bg-primary hover:bg-primary/90 text-white">
-            <Search className="h-4 w-4 mr-2" />
-            Buscar
-        </Button>
+      <Input
+        value={searchQuery}
+        className="max-w-lg flex-1 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm"
+        placeholder="Buscar anime..."
+        type="search" 
+        name="query"
+        onChange={(event) => setSearchQuery(event.target.value)}
+      />
+
+      <Button type="submit" className="bg-primary hover:bg-primary/90 text-white">
+        <Search className="h-4 w-4 mr-2" />
+        Buscar
+      </Button>
     </form>
     )
 }
