@@ -3,7 +3,7 @@
 import { useRouter, useSearchParams } from "next/navigation"
 import useSWR from 'swr';
 import { AnimeInfo } from "@/lib/definition";
-import AnimeCard from "../components/ui/card";
+import AnimeCard from "../../components/ui/card";
 
 
 const fetchSearchByTitles = async (url: string) => {

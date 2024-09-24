@@ -4,41 +4,7 @@ import { config }  from "./config";
 import { AnimeSearchResult } from "./definition";
 import { ValidationError } from "./errors";
 import { fetchResource } from "./fetch";
-// import { HTMLElement } from "node-html-parser";
 
-// I tried it - I give up for filtering...
-// function timeout(ms: number) {
-//     return new Promise(resolve => setTimeout(resolve, ms));
-// }
-
-
-// export type TitleType = 'tv' | 'movie' | 'special' | 'ova'
-// export type Order = 'updated' | 'added' | 'title' | 'rating'
-// export enum Emmision {
-//     OnGoing,
-//     Finished,
-//     CommingSoon
-// }
-// export type SearchParams = Partial<{
-//     year: number[] | number,
-//     status: Emmision | Emmision[],
-//     type: TitleType[] | TitleType,
-//     page: number,
-//     order: Order,
-//     wait?: {
-//         onPage: (page: number) => void,
-//         seconds: number
-//     }
-//     allCatalog: boolean
-// }> | string
-
-// type Pages = {
-//     first: number,
-//     last: number
-// }
-// export type SearchResults =
-//     HomeElement[] |
-//     { Series: HomeElement[], Pages: Pages}
 
 export async function getAnimeByTitle(Query: string): Promise<AnimeSearchResult[]> {
     if (!Query)
@@ -67,31 +33,3 @@ export async function getAnimeByTitle(Query: string): Promise<AnimeSearchResult[
 
     return Animes
 }
-
-// async function Format(Series: HomeElement[], Pages: Pages, Query: SearchParams): Promise<HomeElement[]>{
-//     if(typeof Query === "string")
-//         return Series
-    
-//     for(let i = Pages.first; i <= Pages.last; i++){
-//         const url = 
-//         "/browse?" + new URLSearchParams({
-//             page: i.toString()
-//         }).toString();
-//         if(process.env["DEBUG"])
-//             console.info("[DEGUB] > Getting", url)
-//         if (!Query.wait) {
-//             const $$ = await fetchResource({ resource: config.baseURL + url })
-//             const series = await GetNewSeries($$)
-//             Series.push(...series)
-
-//             continue;
-//         }
-//         await timeout((Query.wait.seconds * i) * 1000);
-//         const $$ = await fetchResource({ resource: config.baseURL + url })
-//         const series = await GetNewSeries($$)
-//         Series.push(...series)
-//         Query.wait?.onPage(i)
-//     }
-
-//     return Series;
-// }

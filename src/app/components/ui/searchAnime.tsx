@@ -9,7 +9,14 @@ import { FormEvent, useState } from "react"
 
 export default function SearchAnime() {
   const search = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState<string | null>(search ? search.get("query") : "")
+  
+  let searhValue = search.get("query")
+
+  if (searhValue == null) {
+    searhValue = ""
+  }
+
+  const [searchQuery, setSearchQuery] = useState<string>(searhValue)
   const router = useRouter();
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {

@@ -1,6 +1,6 @@
-import AnimeHeader from "../components/ui/header";
-import AnimeFooter from "../components/ui/footer";
-import SearchAnime from "../components/ui/searchAnime";
+import AnimeHeader from "../../components/ui/header";
+import AnimeFooter from "../../components/ui/footer";
+import SearchAnime from "../../components/ui/searchAnime";
 
 
 export default function RootLayout({
