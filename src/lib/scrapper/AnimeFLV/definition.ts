@@ -24,3 +24,21 @@ export type AnimeDetail = {
     Episodes: Episode[];
     Finalized: boolean;
 }
+
+export type Server = {
+    TypeServer: string;
+    ServerName: string;
+    ServerUrl: string;
+    ServerCode: string;
+    Language: string;
+}
+
+export type EpisodeDetail = {
+    Title: string;
+    Servers: Server[]
+    AnimeId?: number;
+    AnimeTitle?: string;
+    EpisodeNumber: number;
+    NextEpisodeId: string;
+    PrevEpisodeId: string;
+};

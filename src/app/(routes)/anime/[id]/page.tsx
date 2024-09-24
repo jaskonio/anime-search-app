@@ -96,7 +96,7 @@ export default async function AnimeDetails({ params }: { params: { id: string } 
               <CardContent>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {anime.Episodes.map((episode, index) => (
-                    <Link key={index} className="w-full" href={`/anime/episode/${episode.Id}`}>
+                    <Link key={index} className="w-full" href={`/episode/${episode.Id}`}>
                     <Button key={index} variant="outline" className="w-full justify-start">
                       <Play className="h-4 w-4 mr-2" />
                       Episodio {episode.Number}
