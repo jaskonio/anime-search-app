@@ -1,7 +1,11 @@
 import AnimeHeader from "../../components/ui/header";
 import AnimeFooter from "../../components/ui/footer";
 import SearchAnime from "../../components/ui/searchAnime";
+import { Suspense } from "react";
 
+function SearchBarFallback() {
+  return <>placeholder</>
+}
 
 export default function RootLayout({
   children,
@@ -15,14 +19,17 @@ export default function RootLayout({
       <main className="flex-1">
         <section className="w-full py-12 md:py-14 lg:py-12 bg-white dark:bg-gray-900 flex flex-col items-center">
           <div className="w-full max-w-sm space-y-2">
-            <SearchAnime></SearchAnime>
+          <Suspense fallback={<SearchBarFallback />}>
+          <SearchAnime></SearchAnime>
+          </Suspense>
+            
           </div>
           
         </section>
 
         <section className="w-full py-12 md:py-14 lg:py-12 dark:bg-gray-900">
           <div className="px-4 md:px-6 text-center">
-            {children}
+              {children}
           </div>
         </section>
       </main>
