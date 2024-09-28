@@ -1,21 +1,19 @@
 "use client";
 
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search } from "lucide-react"
-import { useRouter, useSearchParams } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { FormEvent, useState } from "react"
 
 
-export default function SearchAnime() {
-  const search = useSearchParams();
-  
-  let searhValue = search.get("query")
+type SearchAnimeProps = {
+  searhValue: string;
+}
 
-  if (searhValue == null) {
-    searhValue = ""
-  }
 
+export default function SearchAnime({ searhValue }: SearchAnimeProps) {
   const [searchQuery, setSearchQuery] = useState<string>(searhValue)
   const router = useRouter();
 
@@ -27,7 +25,7 @@ export default function SearchAnime() {
     }
 
     const encodedSearchQuery = encodeURI(searchQuery);
-    router.push(`/search?query=${encodedSearchQuery}`);
+    router.push(`/search/${encodedSearchQuery}`);
   }
 
     return (

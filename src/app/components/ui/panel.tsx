@@ -1,11 +1,8 @@
 "use client";
 
-import { Suspense } from "react";
+
 import SearchAnime from "./searchAnime";
 
-function SearchBarFallback() {
-  return <>placeholder</>
-}
 
 export default function AnimePanel() {
   return (
@@ -21,9 +18,7 @@ export default function AnimePanel() {
             </p>
           </div>
           <div className="w-full max-w-sm space-y-2">
-            <Suspense fallback={<SearchBarFallback />}>
-              <SearchAnime></SearchAnime>
-            </Suspense>
+              <SearchAnime searhValue=""></SearchAnime>
           </div>
         </div>
       </div>
