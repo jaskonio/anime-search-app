@@ -35,7 +35,6 @@ export async function searchByTitle(query: string) {
     try {
         const result: AnimeSearchResult[] = await getAnimeByTitle(query)
 
-
         const animesInfo: AnimeInfo[] = result.map((item) => {
             return {
                 animeId: item.Id,

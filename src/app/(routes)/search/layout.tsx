@@ -14,17 +14,14 @@ export default function RootLayout({
 }>) {
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800">
-      <AnimeHeader></AnimeHeader>
 
       <main className="flex-1">
         <section className="w-full py-12 md:py-14 lg:py-12 bg-white dark:bg-gray-900 flex flex-col items-center">
           <div className="w-full max-w-sm space-y-2">
-          <Suspense fallback={<SearchBarFallback />}>
-          <SearchAnime></SearchAnime>
-          </Suspense>
-            
+            <Suspense fallback={<SearchBarFallback />}>
+              <SearchAnime></SearchAnime>
+            </Suspense>
           </div>
-          
         </section>
 
         <section className="w-full py-12 md:py-14 lg:py-12 dark:bg-gray-900">
@@ -33,8 +30,6 @@ export default function RootLayout({
           </div>
         </section>
       </main>
-    
-      <AnimeFooter></AnimeFooter>
     </div>
   );
 }

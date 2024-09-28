@@ -36,7 +36,7 @@ export type Server = {
 export type EpisodeDetail = {
     Title: string;
     Servers: Server[]
-    AnimeId?: number;
+    AnimeId?: string;
     AnimeTitle?: string;
     EpisodeNumber: number;
     NextEpisodeId: string;
