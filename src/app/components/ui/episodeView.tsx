@@ -2,11 +2,11 @@
 
 import ServerSelector from "./serverSelector";
 import { useState } from "react";
-import { EpisodeDetail } from "@/lib/scrapper/AnimeFLV/definition";
 import { EpisodeTitle } from "./episodeTitle";
 import { VideoPlayer } from "./videoPlayer";
 import PrevButton from "./prevButton";
 import NextButton from "./nextButton";
+import { EpisodeDetail } from "@/lib/definition";
 
 
 type EpisodeViewProps = {
@@ -26,6 +26,7 @@ export default function EpisodeView({ episode }: EpisodeViewProps) {
     return (
         <>
             <EpisodeTitle
+                animeTitle={episode.AnimeTitle}
                 episodeNumber={episode.EpisodeNumber}
             ></EpisodeTitle>
             <ServerSelector

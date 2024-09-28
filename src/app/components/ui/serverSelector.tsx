@@ -1,7 +1,7 @@
 "use client";
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Server } from "@/lib/scrapper/AnimeFLV/definition";
+import { Server } from "@/lib/definition";
 
 
 type ServerTabsProps = {

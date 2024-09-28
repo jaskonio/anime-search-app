@@ -1,12 +1,12 @@
 "use server";
 
 import EpisodeView from "@/app/components/ui/episodeView";
-import { getSourcesByEpisodeId } from "@/lib/scrapper/AnimeFLV";
+import { fetchEpisodeDetails } from "@/lib/animeActions";
 
 
 export default async function Page({ params }: { params: { id: string } }) {
     const id = params.id;
-    const episode = await getSourcesByEpisodeId(id)
+    const episode = await fetchEpisodeDetails(id)
 
     if (!episode) {
         return "No hay informacion del episodio"

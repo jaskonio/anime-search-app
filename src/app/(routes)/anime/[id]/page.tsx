@@ -4,14 +4,14 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Star, Heart, Play } from "lucide-react"
-import { getAnimeById } from '@/lib/scrapper/AnimeFLV';
 import Image from 'next/image'
 import Link from "next/link"
+import { fetchById } from "@/lib/animeActions";
 
 
 export default async function AnimeDetails({ params }: { params: { id: string } }) {
     const id = params.id;
-    const anime = await getAnimeById(id)
+    const anime = await fetchById(id)
 
     const isFavorite = true
 
