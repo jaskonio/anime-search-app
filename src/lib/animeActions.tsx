@@ -2,7 +2,6 @@
 import { GetAnimeInfo, GetNewSeries, GetResources, Search } from "@carlosnunezmx/animeflv";
 import { HomeElement } from "@carlosnunezmx/animeflv/types/scrappers/main_page";
 import { AnimeDetail, AnimeInfo, EpisodeDetail } from "./definition";
-// import { SearchResults } from "@carlosnunezmx/animeflv/types/scrappers/search";
 
 
 function extractParts(str: string) {
